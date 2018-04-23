@@ -1,0 +1,85 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:CustomizeAppointmentExample"
+    xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/common"
+    xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    x:Class="CustomizeAppointmentExample.MainWindow"
+    Height="600"
+    Width="800"
+    mc:Ignorable="d"
+    DataContext="{dxmvvm:ViewModelSource {x:Type local:MainViewModel}}"
+    Title="Scheduling Application">
+
+    <!--region #AppointmentContentTemplate-->
+    <Window.Resources>
+        <DataTemplate x:Key="appointmentContentTemplate">
+            <DockPanel>
+                <DockPanel.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0, 1">
+                        <GradientStop Color="Gray" Offset="0" />
+                        <GradientStop Color="Transparent" Offset="1" />
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <Image
+                    Margin="2"
+                    Height="16"
+                    Width="16"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    DockPanel.Dock="Left"
+                    Source="{Binding Data.Label.Id, Converter={local:LabelToImageSourceConverter}}" />
+                <dxschv:FastTextBlock
+                    x:Name="description"
+                    Text="{Binding Subject, RelativeSource={RelativeSource TemplatedParent}}"
+                    WordWrap="True" />
+            </DockPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <!--endregion #AppointmentContentTemplate-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="757*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <dxsch:Scheduler x:Name="scheduler" ActiveViewIndex="0" Grid.ColumnSpan="2">
+            <dxsch:Scheduler.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appointments}" ResourcesSource="{Binding Doctors}">
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings
+                            AllDay="AllDay"
+                            AppointmentId="Id"
+                            End="EndTime"
+                            Location="Location"
+                            RecurrenceInfo="RecurrenceInfo"
+                            Reminder="ReminderInfo"
+                            ResourceId="DoctorId"
+                            Start="StartTime"
+                            Subject="PatientName"
+                            Type="Type">
+                            <dxsch:CustomFieldMapping Mapping="InsuranceNumber" Name="InsuranceNumber" />
+                            <dxsch:CustomFieldMapping Mapping="FirstVisit" Name="FirstVisit" />
+                            <dxsch:CustomFieldMapping Mapping="Notes" Name="Notes" />
+                        </dxsch:AppointmentMappings>
+                    </dxsch:DataSource.AppointmentMappings>
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Caption="Name" Id="Id" />
+                    </dxsch:DataSource.ResourceMappings>
+                </dxsch:DataSource>
+            </dxsch:Scheduler.DataSource>
+    <!--region #ApplyAppointmentContentTemplate-->
+            <dxsch:DayView AppointmentContentTemplate="{StaticResource appointmentContentTemplate}" ShowWorkTimeOnly="True" DayCount="3"/>
+            <dxsch:WorkWeekView AppointmentContentTemplate="{StaticResource appointmentContentTemplate}" ShowWorkTimeOnly="True" />
+    <!--endregion #ApplyAppointmentContentTemplate-->
+            <dxsch:WeekView />
+            <dxsch:MonthView />
+        </dxsch:Scheduler>
+    </Grid>
+
+</Window>
