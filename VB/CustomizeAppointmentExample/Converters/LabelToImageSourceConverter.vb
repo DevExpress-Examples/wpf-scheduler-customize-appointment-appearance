@@ -28,7 +28,7 @@ Namespace CustomizeAppointmentExample
     End Class
     #End Region ' #ConditionToImageSourceConverter
 
-    #Region "#ConditionToImageSourceConverter"
+    #Region "#ConditionToImageSourceConverterExtension"
     Public Class ConditionToImageSourceConverterExtension
         Inherits MarkupExtension
 
@@ -36,5 +36,5 @@ Namespace CustomizeAppointmentExample
             Return New ConditionToImageSourceConverter()
         End Function
     End Class
-    #End Region ' #LabelToImageSourceConverterExtension
+    #End Region ' #ConditionToImageSourceConverterExtension
 End Namespace
