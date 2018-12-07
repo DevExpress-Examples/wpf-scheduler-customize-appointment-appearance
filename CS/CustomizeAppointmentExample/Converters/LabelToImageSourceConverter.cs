@@ -30,7 +30,7 @@ namespace CustomizeAppointmentExample
     }
     #endregion #ConditionToImageSourceConverter
 
-    #region #ConditionToImageSourceConverter
+    #region #ConditionToImageSourceConverterExtension
     public class ConditionToImageSourceConverterExtension : MarkupExtension
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
@@ -38,5 +38,5 @@ namespace CustomizeAppointmentExample
             return new ConditionToImageSourceConverter();
         }
     }
-    #endregion #LabelToImageSourceConverterExtension
+    #endregion #ConditionToImageSourceConverterExtension
 }
