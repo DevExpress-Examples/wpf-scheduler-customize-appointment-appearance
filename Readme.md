@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [LabelToImageSourceConverter.cs](./CS/CustomizeAppointmentExample/Converters/LabelToImageSourceConverter.cs) (VB: [LabelToImageSourceConverter.vb](./VB/CustomizeAppointmentExample/Converters/LabelToImageSourceConverter.vb))
-* [MainWindow.xaml](./CS/CustomizeAppointmentExample/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/CustomizeAppointmentExample/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/CustomizeAppointmentExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/CustomizeAppointmentExample/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/CustomizeAppointmentExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/CustomizeAppointmentExample/MainWindow.xaml.vb))
 * [MainViewModel.cs](./CS/CustomizeAppointmentExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/CustomizeAppointmentExample/ViewModel/MainViewModel.vb))
 <!-- default file list end -->
