@@ -13,6 +13,7 @@
     Height="600" MinHeight="400"
     Width="800"
     mc:Ignorable="d"
+    dx:ThemeManager.ThemeName="Office2019White"
     DataContext="{dxmvvm:ViewModelSource {x:Type local:MainViewModel}}"
     Title="Custom Appointment Appearance Example">
 
