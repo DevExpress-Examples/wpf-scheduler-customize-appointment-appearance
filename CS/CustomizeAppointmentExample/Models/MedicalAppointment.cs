@@ -1,18 +1,12 @@
-﻿#region #usings
-using DevExpress.Mvvm.POCO;
+﻿using DevExpress.Mvvm.POCO;
 using System;
-#endregion #usings
 
-namespace CustomizeAppointmentExample
-{
-    public class MedicalAppointment
-    {
-        public static MedicalAppointment Create()
-        {
+namespace CustomizeAppointmentExample {
+    public class MedicalAppointment {
+        public static MedicalAppointment Create() {
             return ViewModelSource.Create(() => new MedicalAppointment());
         }
-        internal static MedicalAppointment Create(DateTime StartTime, DateTime EndTime, int DoctorId, string Location, string PatientName, string Note, bool FirstVisit)
-        {
+        internal static MedicalAppointment Create(DateTime StartTime, DateTime EndTime, int DoctorId, string Location, string PatientName, string Note, bool FirstVisit) {
             MedicalAppointment apt = MedicalAppointment.Create();
             apt.StartTime = StartTime;
             apt.EndTime = EndTime;
@@ -42,4 +36,3 @@ namespace CustomizeAppointmentExample
         public virtual bool FirstVisit { get; set; }
     }
 }
-

@@ -1,18 +1,11 @@
-﻿#region #usings
-using DevExpress.Mvvm.POCO;
-using System;
-#endregion #usings
+﻿using DevExpress.Mvvm.POCO;
 
-namespace CustomizeAppointmentExample
-{
-    public class Doctor
-    {
-        public static Doctor Create()
-        {
+namespace CustomizeAppointmentExample {
+    public class Doctor {
+        public static Doctor Create() {
             return ViewModelSource.Create(() => new Doctor());
         }
-        public static Doctor Create(int Id, string Name)
-        {
+        public static Doctor Create(int Id, string Name) {
             Doctor doctor = Doctor.Create();
             doctor.Id = Id;
             doctor.Name = Name;
@@ -25,4 +18,3 @@ namespace CustomizeAppointmentExample
         public virtual string Name { get; set; }
     }
 }
-
