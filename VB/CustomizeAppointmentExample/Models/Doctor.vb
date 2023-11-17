@@ -1,7 +1,5 @@
-#Region "#usings"
 Imports DevExpress.Mvvm.POCO
 
-#End Region  ' #usings
 Namespace CustomizeAppointmentExample
 
     Public Class Doctor

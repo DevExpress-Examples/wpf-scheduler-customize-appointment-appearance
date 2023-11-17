@@ -6,7 +6,6 @@ Imports System.Windows.Markup
 
 Namespace CustomizeAppointmentExample
 
-#Region "#ConditionToImageSourceConverter"
     Public Class ConditionToImageSourceConverter
         Implements IValueConverter
 
@@ -23,8 +22,6 @@ Namespace CustomizeAppointmentExample
         End Function
     End Class
 
-#End Region  ' #ConditionToImageSourceConverter
-#Region "#ConditionToImageSourceConverterExtension"
     Public Class ConditionToImageSourceConverterExtension
         Inherits MarkupExtension
 
@@ -32,5 +29,4 @@ Namespace CustomizeAppointmentExample
             Return New ConditionToImageSourceConverter()
         End Function
     End Class
-#End Region  ' #ConditionToImageSourceConverterExtension
 End Namespace

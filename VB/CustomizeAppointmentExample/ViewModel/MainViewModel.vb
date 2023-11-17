@@ -1,8 +1,6 @@
-#Region "#usings"
 Imports System
 Imports System.Collections.ObjectModel
 
-#End Region  ' #usings
 Namespace CustomizeAppointmentExample
 
     Public Class MainViewModel
